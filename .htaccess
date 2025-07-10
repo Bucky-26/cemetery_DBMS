@@ -1,0 +1,16 @@
+# Enable mod_rewrite
+RewriteEngine On
+
+# Custom error pages
+ErrorDocument 404 /error_pages/404.html
+ErrorDocument 403 /error_pages/403.html
+ErrorDocument 500 /error_pages/500.html
+
+# Redirect admin/login.php to cdbms/secure/login?allow=true
+RewriteEngine On
+RewriteRule ^cdbms/secure/login$ /admin/login.php [L]
+# Rewrite for the CSS file
+RewriteRule ^cdbms/secure/assets/style.css$ /admin/assets/style.css [L]
+
+# Rewrite for the JS file
+RewriteRule ^cdbms/secure/assets/login.js$ /admin/assets/login.js [L]
